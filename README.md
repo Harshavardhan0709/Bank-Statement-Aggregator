@@ -47,11 +47,14 @@ The Bank Statement Aggregator is an enterprise-grade system designed to:
 | **Logging** | SLF4J, Logback |
 
 **🏗 System Architecture**
-Components:
+**Components:**
 
 Client Application: Sends HTTP requests to the backend
+
 Spring Boot Backend: Handles business logic, authentication, and API endpoints
+
 MySQL Database: Stores user data, companies, branches, and transaction records
+
 AWS S3 Bucket: Cloud storage for bank statement files
 
 
@@ -71,8 +74,7 @@ AWS S3 Bucket: Cloud storage for bank statement files
 - One Branch → Many Bank Statements
 - One Bank Statement → Many Transactions
 
-**📦 Prerequisites
-**
+**📦 Prerequisites**
 - **Java**: JDK 17 or higher
 - **Maven**: 3.6+
 - **MySQL**: 8.x
@@ -83,7 +85,7 @@ AWS S3 Bucket: Cloud storage for bank statement files
 
 
 **📁 Project Structure**
-Main Directories:
+**Main Directories:**
 
 **controllers/ - REST API Controllers**
 UserController.java - User registration and login endpoints
@@ -112,8 +114,7 @@ AWSService.java - AWS S3 integration logic
 FileUtils.java - File handling utilities
 AWSUtils.java - AWS helper methods
 
-**
-resources/ - Configuration Files**
+**resources/ - Configuration Files**
 application.properties - Application configuration
 logback.xml - Logging configuration
 
