@@ -32,7 +32,7 @@ The Bank Statement Aggregator is an enterprise-grade system designed to:
 - Blob/Text storage for statement data
 - Organized S3 bucket structure: `user_id/company_id/branch_id/statements
 
-** 🛠** Technologies Used****
+**🛠 Technologies Used**
 
 | Category | Technologies |
 |----------|-------------|
