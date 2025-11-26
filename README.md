@@ -1,4 +1,4 @@
-🏦 Bank Statement Aggregator
+**🏦 Bank Statement Aggregator**
 
 A comprehensive Spring Boot-based backend application that aggregates bank statements from multiple branches and banks.
 The system handles statement generation, cloud storage using AWS S3, user authentication, and provides seamless statement retrieval and database storage capabilities.
@@ -32,7 +32,7 @@ The Bank Statement Aggregator is an enterprise-grade system designed to:
 - Blob/Text storage for statement data
 - Organized S3 bucket structure: `user_id/company_id/branch_id/statements
 
- 🛠** Technologies Used**
+** 🛠** Technologies Used****
 
 | Category | Technologies |
 |----------|-------------|
@@ -46,21 +46,16 @@ The Bank Statement Aggregator is an enterprise-grade system designed to:
 | **Build Tool** | Maven |
 | **Logging** | SLF4J, Logback |
 
-🏗 System Architecture
+**🏗 System Architecture**
+Components:
+
+Client Application: Sends HTTP requests to the backend
+Spring Boot Backend: Handles business logic, authentication, and API endpoints
+MySQL Database: Stores user data, companies, branches, and transaction records
+AWS S3 Bucket: Cloud storage for bank statement files
 
 
-┌─────────────┐       ┌──────────────┐       ┌─────────────┐
-│   Client    │─────▶   Spring Boot │─────▶ │   MySQL     │
-│ Application │       │   Backend    │       │  Database   │
-└─────────────┘       └──────────────┘       └─────────────┘
-                            │
-                            ▼
-                     ┌─────────────┐
-                     │   AWS S3    │
-                     │   Bucket    │
-                     └─────────────┘
-
-**Flow:**
+**Data Flow:**
 1. User registers/logs in → Spring Security validates credentials
 2. System generates bank statements → Saves locally
 3. Statements uploaded to AWS S3 → Organized by user/company/branch
@@ -69,7 +64,7 @@ The Bank Statement Aggregator is an enterprise-grade system designed to:
 
 
 
-Entity Relationships
+**Entity Relationships**
 - One Company → Many Users
 - One Company → Many Branches
 - One User → Many Bank Statements
@@ -87,44 +82,40 @@ Entity Relationships
 
 
 
-📁 Project Structure
+**📁 Project Structure**
+Main Directories:
 
-bank-statement-aggregator/
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── com/
-│   │   │       └── example/
-│   │   │           └── aggregator/
-│   │   │               ├── controllers/
-│   │   │               │   ├── UserController.java
-│   │   │               │   └── StatementController.java
-│   │   │               ├── models/
-│   │   │               │   ├── User.java
-│   │   │               │   ├── Company.java
-│   │   │               │   ├── Branch.java
-│   │   │               │   ├── BankStatement.java
-│   │   │               │   └── Transaction.java
-│   │   │               ├── repositories/
-│   │   │               │   ├── UserRepository.java
-│   │   │               │   ├── CompanyRepository.java
-│   │   │               │   ├── BranchRepository.java
-│   │   │               │   └── BankStatementRepository.java
-│   │   │               ├── services/
-│   │   │               │   ├── UserService.java
-│   │   │               │   ├── StatementService.java
-│   │   │               │   └── AWSService.java
-│   │   │               ├── utils/
-│   │   │               │   ├── FileUtils.java
-│   │   │               │   └── AWSUtils.java
-│   │   │               └── AggregatorApplication.java
-│   │   └── resources/
-│   │       ├── application.properties
-│   │       └── logback.xml
-│   └── test/
-│       └── java/
-├── pom.xml
-└── README.md
+**controllers/ - REST API Controllers**
+UserController.java - User registration and login endpoints
+StatementController.java - Bank statement management endpoints
+
+**models/ - Entity Classes**
+User.java - User entity with authentication details
+Company.java - Company entity
+Branch.java - Branch entity
+BankStatement.java - Bank statement entity
+Transaction.java - Transaction entity
+
+**repositories/ - Data Access Layer**
+UserRepository.java - User data operations
+CompanyRepository.java - Company data operations
+BranchRepository.java - Branch data operations
+BankStatementRepository.java - Statement data operations
+
+
+**services/ - Business Logic Layer**
+UserService.java - User-related business logic
+StatementService.java - Statement processing logic
+AWSService.java - AWS S3 integration logic
+
+**utils/ - Utility Classes**
+FileUtils.java - File handling utilities
+AWSUtils.java - AWS helper methods
+
+**
+resources/ - Configuration Files**
+application.properties - Application configuration
+logback.xml - Logging configuration
 
 
 **👤 Author**
